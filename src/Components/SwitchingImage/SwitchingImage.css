@@ -1,0 +1,28 @@
+
+
+
+  .image_box{
+    --image_url : var('../../images2/'+--url_num+'.jpg');
+    min-height: 100%;
+    min-width : 100%;
+    /* animation: fade var(--animation-time) infinite; */
+    background-image: url('../../images2/2.jpg');
+    background-size: cover;
+    background-position : center;
+  }
+
+
+@keyframes fade {
+ 0%{
+  background-image: url(../../images2/2.jpg);
+ }
+ 20%{
+  background-image:  url(../../images2/4.jpg) ;
+ }
+ 40%{
+  background-image:  url(../../images2/2.jpg) ;
+ }
+ 100%{
+  background-image:   url(../../images2/2.jpg)  ;
+ }
+}

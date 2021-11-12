@@ -1,0 +1,20 @@
+.bodyContact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 93vh;
+    background: #F1BDAF;
+}
+
+.ContactCard{
+    display: flex;
+    min-height: 70vh;
+    background: white;
+    border-radius: 30px;
+
+}
+
+.ContactCardTypo{
+    background: black;
+    min-width: 30vh;
+}

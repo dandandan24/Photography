@@ -1,0 +1,16 @@
+.showAll{
+    animation: blackWhite 10s ease infinite;
+  }
+
+
+  @keyframes blackWhite {
+    0%,100%{
+      color:black;
+      border-color : black;
+    }
+    20%,70% {
+      color:white;
+      border-color : white;
+    }
+
+  }
