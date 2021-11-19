@@ -1,22 +1,23 @@
 import React from 'react'
+import {useEffect} from 'react'
 import './GalleryWindow.css'
 import Dialog from '@material-ui/core/Dialog'
 import { PinDropSharp } from '@material-ui/icons'
-import Slide from '@material-ui/core/Slide'
+import SlideUp from '@material-ui/core/Slide'
 import {connect , dispatch} from 'react-redux'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Close from '@material-ui/icons/Close'
-
+import Fade from 'react-reveal'
 
 const GalleryWindow = (props) => {
 
     const Transition = React.forwardRef(function Transition(props, ref) {
-        return <Slide direction="up" ref={ref} {...props} />;
+        return <SlideUp direction="up" ref={ref} {...props} />;
       });
 
-    
+  
 
     return(
         <Dialog fullScreen open = {props.open} onClose ={props.handleClose} TransitionComponent={Transition}>
@@ -39,28 +40,60 @@ const GalleryWindow = (props) => {
                 </div>
                 <div className = "box2">
                     <div className =  "dream">
-                        <img src = "./images2/1.jpg"></img>                                                                 
-                        <img src = "./images2/2.jpg"></img>
-                        <img src = "./images2/3.jpg"></img>
-                        <img src = "./images2/4.jpg"></img>
-                        <img src = "./images2/5.jpg"></img>
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/1.jpg"></img>
+                        </Fade>                                                                                
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/2.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/3.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/4.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/5.jpg"></img>
+                        </Fade> 
                     </div>
-                    <div className =  "dream">
-                        <img src = "./images2/6.jpg"></img>
-                        <img src = "./images2/7.jpg"></img>
-                        <img src = "./images2/8.jpg"></img>
-                        <img src = "./images2/9.jpg"></img>
-                        <img src = "./images2/10.jpg"></img>
-                    </div>
-                    <div className =  "dream">
-                        <img src = "./images2/11.jpg"></img>
-                        <img src = "./images2/12.jpg"></img>
-                        <img src = "./images2/13.jpg"></img>
-                        <img src = "./images2/14.jpg"></img>
-                        <img src = "./images2/15.jpg"></img>
+                    <div className =  "dream">                            
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/6.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/7.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/8.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/9.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/10.jpg"></img>
+                        </Fade>                           
+                    </div>              
+                    <div  className =  "dream">
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/11.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/12.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/13.jpg"></img>
+                        </Fade>
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/14.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/15.jpg"></img>
+                        </Fade> 
+                        
                     </div>
                 </div>
             </div>
+           
         </Dialog>
         
 

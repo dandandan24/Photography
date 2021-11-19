@@ -8,7 +8,7 @@ import './Gallery.css'
 import { Button } from '@material-ui/core'
 import GalleryWindow from '../../Components/GalleryWindow/GalleryWindow'
 import {connect, dispatch} from 'react-redux'
-
+import Aos from "aos"
 
 const imgData = ['./images2/1.jpg',
                 './images2/2.jpg',
@@ -21,6 +21,8 @@ const imgData = ['./images2/1.jpg',
    
 
 const Gallery = (props) => {
+  
+
     return(
         <div id = 'Gallery' style = {{marginTop: '1.4em' , marginBottom : '1.0em'}}>
             <Grid container spacing = {1}>

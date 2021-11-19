@@ -40,13 +40,13 @@ const useStyles = makeStyles(theme => ({
         textTransform : 'none',
         fontSize : 18,
         color : 'white',
-        fontWeight : 'bold'
+        
     },
     blackTab : {
         textTransform : 'none',
         fontSize : 18,
         color : 'black',
-        fontWeight : 'bold'
+        
     },
     toolbarMargin : {
         ...theme.mixins.toolbar
