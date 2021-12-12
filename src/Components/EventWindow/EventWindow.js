@@ -18,7 +18,7 @@ const EventWindow = (props) => {
     
 
     return(
-        <Dialog fullScreen open = {props.open} onClose ={props.handleClose} TransitionComponent={Transition}>
+        <Dialog fullScreen open = {props.open} onClose ={props.handleClose} TransitionComponent={Transition} style = {{  overflow : 'visible'}}>
              <AppBar sx={{ position: 'relative'}} style= {{background : 'none' , color : 'black' , boxShadow : 'none'}}>
                 <ToolBar>
                     <IconButton

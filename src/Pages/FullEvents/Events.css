@@ -1,0 +1,85 @@
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: unset;
+    align-items : center;
+    text-align: center;
+    margin : 0;
+    min-width: 100%;
+    height : 100vh;
+}
+
+.container .img-container {
+    width : 33.34%;
+    height : 100vh;
+    display: flex;
+}
+
+
+.container .img-container img{
+    width : 100%;
+    height : 100%; 
+    transition: transform .5s ease-in-out; /* Animation */
+    overflow : hidden;
+  
+}
+
+.container .left-button{
+    margin-left: 20px;
+    position: absolute;
+    z-index: 10;
+    background-color: transparent;
+}
+
+.container .right-button{
+    margin-left: 20px;
+    position: absolute;
+    z-index: 10;
+    background-color: transparent;
+    right: 1%;
+}
+
+
+.container .img-container .text-overlay{
+    width : 33.34%;
+    height: 20%;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.9));
+    color : white;
+    font-size: 40px;
+    border-radius: 0px;
+    position: absolute;
+    z-index: 10;
+    align-self: flex-end;   
+}
+
+.container .headline-overlay{
+    width : 100%;
+    height: 20%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    color : white;
+    font-size: 40px;
+    border-radius: 0px;
+    position: absolute;
+    z-index: 10;
+    align-self: flex-start;   
+    justify-self: flex-start;
+}
+
+.container .headline-overlay span{
+    position: relative;
+    top : 40%;
+    right: center;
+}
+
+.container .img-container .text-overlay span{
+    position: relative;
+    top : 40%;
+    right: 25%;
+}
+
+.container .img-container img:hover{
+    transform: scale(1.2) ;
+    overflow : hidden;
+}

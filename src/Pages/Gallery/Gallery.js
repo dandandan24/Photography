@@ -12,11 +12,11 @@ import Aos from "aos"
 
 const imgData = ['./images2/1.jpg',
                 './images2/2.jpg',
-                './images2/3.jpg',
+                './images2/7.jpg',
                 './images2/4.jpg',
                 './images2/5.jpg',
                 './images2/6.jpg',
-                './images2/7.jpg',
+                './images2/3.jpg',
                 './images2/8.jpg']
    
 

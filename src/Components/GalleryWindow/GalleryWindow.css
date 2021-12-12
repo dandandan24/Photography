@@ -5,47 +5,49 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+
 }
 
-.container{
+.gallery-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin: 40px 20px 0 20px;
+  overflow : visible
 }
 
-.container .heading{
+.gallery-container .heading{
   width: 50%;
   padding-bottom: 50px;
 }
 
-.container .heading h3{
+.gallery-container .heading h3{
   font-size: 3em;
   font-weight: bolder;
   padding-bottom: 10px;
   border-bottom: 3px solid #222;
 }
 
-.container .heading h3 span{
+.gallery-container .heading h3 span{
   font-weight: 100;
 }
-.container .box2{
+
+.gallery-container .box2{
  display: flex;
  flex-direction: row;
  justify-content: space-between;
 }
 
-.container .box2 .dream{
+.gallery-container .box2 .dream{
   display: flex;
   flex-direction: column;
   width: 32.5%;
- 
   overflow: hidden;
 }
 
-.container .box2 .dream img{
+.gallery-container .box2 .dream img{
   width: 100%;
   padding-bottom: 15px;
   border-radius: 5px;
@@ -55,14 +57,14 @@
 
 
 
-.container .btn{
+.gallery-container .btn{
   margin: 40px 0 70px 0;
   background: #222;
   padding: 15px 40px ;
   border-radius: 5px;
 }
 
-.container .btn a{
+.gallery-container .btn a{
  color: #fff;
  font-size: 1.2em;
  text-decoration: none;
@@ -71,11 +73,11 @@
 }
 
 @media only screen and (max-width: 769px){
-    .container .box2{
+    .gallery-container .box2{
    flex-direction: column;
   }
 
-.container .box2 .dream{
+.gallery-container .box2 .dream{
   width: 100%;
 }
 
@@ -86,10 +88,10 @@
 }
 
 @media only screen and (max-width: 643px){
-.container .heading{
+.gallery-container .heading{
   width: 100%;
 }
-.container .heading h3{
+.gallery-container .heading h3{
   font-size: 1em;
 
 }

@@ -20,7 +20,7 @@ const GalleryWindow = (props) => {
   
 
     return(
-        <Dialog fullScreen open = {props.open} onClose ={props.handleClose} TransitionComponent={Transition}>
+        <Dialog fullScreen open = {props.open} onClose ={props.handleClose} TransitionComponent={Transition} style = {{  overflow : 'visible'}}>
              <AppBar sx={{ position: 'relative'}} style= {{background : 'none' , color : 'black' , boxShadow : 'none'}}>
                 <ToolBar>
                     <IconButton
@@ -34,12 +34,42 @@ const GalleryWindow = (props) => {
                     </IconButton>
                 </ToolBar>
             </AppBar>
-            <div className = "container">
+            <div className = "gallery-container">
                 <div className = "heading">
                     <h3>Photo <span>Gallery</span></h3>
                 </div>
                 <div className = "box2">
                     <div className =  "dream">
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/1.jpg"></img>
+                        </Fade>                                                                                
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/2.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/3.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/4.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/5.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/1.jpg"></img>
+                        </Fade>                                                                                
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/2.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/3.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/4.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/5.jpg"></img>
+                        </Fade> 
                         <Fade bottom distance = '85px'>
                             <img src = "./images2/1.jpg"></img>
                         </Fade>                                                                                
@@ -71,7 +101,37 @@ const GalleryWindow = (props) => {
                         </Fade>                      
                         <Fade bottom distance = '85px'>
                             <img src = "./images2/10.jpg"></img>
-                        </Fade>                           
+                        </Fade>     
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/6.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/7.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/8.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/9.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/10.jpg"></img>
+                        </Fade>                          
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/6.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/7.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/8.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/9.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/10.jpg"></img>
+                        </Fade>    
                     </div>              
                     <div  className =  "dream">
                         <Fade bottom distance = '85px'>
@@ -89,7 +149,36 @@ const GalleryWindow = (props) => {
                         <Fade bottom distance = '85px'>
                             <img src = "./images2/15.jpg"></img>
                         </Fade> 
-                        
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/11.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/12.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/13.jpg"></img>
+                        </Fade>
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/14.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/15.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/11.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/12.jpg"></img>
+                        </Fade> 
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/13.jpg"></img>
+                        </Fade>
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/14.jpg"></img>
+                        </Fade>                      
+                        <Fade bottom distance = '85px'>
+                            <img src = "./images2/15.jpg"></img>
+                        </Fade> 
                     </div>
                 </div>
             </div>

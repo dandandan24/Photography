@@ -2,9 +2,11 @@ import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import NavBar from '../../Components/NavBar/navbar'
 import Background from '../../Images/background.png'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles, Zoom } from '@material-ui/core'
 import { Subheader } from 'material-ui'
 import { Element} from 'react-scroll'
+import Fade from 'react-reveal'
+import Reveal from 'react-reveal'
 
 const useStyles = makeStyles(theme => ({
    Header : {
@@ -41,9 +43,9 @@ const About = () => {
           <Element name="About">
             <NavBar labels = {['About' , 'Gallery' ,'Events', 'Contact']} clean = {true}></NavBar>
             <div className = {classes.textBox}>
-                <Typography className = {classes.Header}>Hi, i am Revital</Typography>
-                <Typography className = {classes.Subheader}>Event photographer</Typography>
-                <Typography className = {classes.normalText}>Lorem ipsum dolor sit amet, 
+                <Fade top distance = '130px' > <Typography className = {classes.Header}>Hi, i am Revital</Typography></Fade>
+                <Fade top distance = '75px'><Typography className = {classes.Subheader}>Event photographer</Typography></Fade>
+                <Fade top distance = '75px'><Typography className = {classes.normalText}>Lorem ipsum dolor sit amet, 
                 consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore 
                 et dolore magna aliqua. 
@@ -52,7 +54,7 @@ const About = () => {
                 laboris nisi ut aliquip ex ea commodo consequat. 
                 Duis aute irure dolor in reprehenderit in 
                 voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. </Typography>
+                dolore eu fugiat nulla pariatur. </Typography></Fade>
             </div>
             </Element>
         </div>

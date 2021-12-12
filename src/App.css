@@ -7,6 +7,10 @@
   display: none;
 }
 
+*{
+  overflow : hidden
+}
+
 ::-webkit-scrollbar-track{
   background-color: none;
  

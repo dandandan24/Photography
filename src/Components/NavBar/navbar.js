@@ -9,6 +9,7 @@ import  {makeStyles} from '@material-ui/styles'
 import { white } from 'material-ui/styles/colors'
 import { connect , dispatch } from "react-redux"
 import Scroll from 'react-scroll'
+import disableScroll from 'disable-scroll'
 
 const useStyles = makeStyles(theme => ({
     cleanappBar : {
@@ -90,20 +91,20 @@ const NavBar = (props) => {
             })
             props.ChangeTab(3)
         }
-       
     }
 
     return(
         <>
-            <AppBar className = {props.tab === 0 ? classes.cleanappBar : props.tab === 1? classes.whitebackGround : props.tab === 2? classes.cleanappBar : classes.whitebackGround}>
+            <AppBar className = {props.tab === 0 ? classes.cleanappBar : props.tab === 1? classes.whitebackGround : props.tab === 2? classes.whitebackGround : classes.whitebackGround}>
                 <Toolbar>
+                   
                     <Typography variant="h6" className = {classes.LogoMargin}>
                         Revital
                     </Typography>      
                     <Tabs value = {props.tab} className = {classes.tabContainer}>
                         {props.labels.map( (label) => {
                             return(
-                                <Tab onClick = {()=> {changeTab(label)}} label = {label} className = {props.tab === 0 ? classes.tab : props.tab === 1 ? classes.blackTab : props.tab === 2 ? classes.tab : classes.blackTab}></Tab>
+                                <Tab onClick = {()=> {changeTab(label)}} label = {label} className = {props.tab === 0 ? classes.tab : props.tab === 1 ? classes.blackTab : props.tab === 2 ? classes.blackTab : classes.blackTab}></Tab>
                             )
                         })
                         }

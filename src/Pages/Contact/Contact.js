@@ -74,7 +74,7 @@ const Contact = (props) => {
                                         <Grid container>
                                             <Grid item xs = {5}></Grid>
                                             <Grid item xs ={3}>
-                                                <Button style = {{textTransform : 'none' , backgroundColor : '#F1BDAF'}}>Send</Button>
+                                                <Button style = {{textTransform : 'none' , backgroundColor : '#fbe6d6'}}>Send</Button>
                                             </Grid>
                                         </Grid>
                                     </Grid>
