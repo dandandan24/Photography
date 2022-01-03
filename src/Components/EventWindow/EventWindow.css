@@ -1,0 +1,52 @@
+
+table {
+    border-collapse: collapse;
+    width : 95%
+}
+
+th {
+    font-size: 37px;
+    color : #C4A180;
+    padding-left: 35px;
+}
+
+.borderBottom {
+    border-bottom: 4px solid #C4A180;
+    border-radius: 3px;
+    width : 10%;
+    right : 45%;
+    position: relative;
+}
+
+td{
+   text-align: center;
+   width: 25%;
+   padding-left: 35px;
+
+}
+
+.col {
+    background-color: rgba(255, 255, 255 , 0.3);
+    background-clip: content-box;
+}
+
+.price {
+    font-size: 33px;
+    color: #E8CB86;
+}
+
+.brightBack {
+    font-size: 20px;
+    color : black
+}
+
+.darkBack {
+    font-size: 20px;
+    color : white
+}
+
+tr{
+    min-height: 15%;
+    height: 100px;
+   
+}

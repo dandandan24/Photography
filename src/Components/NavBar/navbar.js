@@ -49,6 +49,13 @@ const useStyles = makeStyles(theme => ({
         color : 'black',
         
     },
+    cleanWhiteappBar: {
+        position : 'fixed',
+        zIndex : 10,
+        boxShadow : 'none',
+        background : 'none',
+        color : 'white',
+    },
     toolbarMargin : {
         ...theme.mixins.toolbar
     }
@@ -95,7 +102,7 @@ const NavBar = (props) => {
 
     return(
         <>
-            <AppBar className = {props.tab === 0 ? classes.cleanappBar : props.tab === 1? classes.whitebackGround : props.tab === 2? classes.whitebackGround : classes.whitebackGround}>
+            <AppBar className = {props.tab === 0 ? classes.cleanappBar : props.tab === 1? classes.whitebackGround : props.tab === 2? classes.cleanWhiteappBar : classes.whitebackGround}>
                 <Toolbar>
                    
                     <Typography variant="h6" className = {classes.LogoMargin}>
@@ -104,7 +111,7 @@ const NavBar = (props) => {
                     <Tabs value = {props.tab} className = {classes.tabContainer}>
                         {props.labels.map( (label) => {
                             return(
-                                <Tab onClick = {()=> {changeTab(label)}} label = {label} className = {props.tab === 0 ? classes.tab : props.tab === 1 ? classes.blackTab : props.tab === 2 ? classes.blackTab : classes.blackTab}></Tab>
+                                <Tab onClick = {()=> {changeTab(label)}} label = {label} className = {props.tab === 0 ? classes.tab : props.tab === 1 ? classes.blackTab : props.tab === 2 ? classes.tab : classes.blackTab}></Tab>
                             )
                         })
                         }

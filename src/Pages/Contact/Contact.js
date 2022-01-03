@@ -103,11 +103,11 @@ const Contact = (props) => {
                             <Grid container style = {{marginTop:'6vh'}}>
                                 <Grid item xs = {6}>
                                     <Typography className = {classes.Subheader}>Email:</Typography>
-                                    <Typography className = {classes.normalText}>rosenbergdan6@gmail.com</Typography>
+                                    <Typography className = {classes.normalText}>rparzelina@gmail.com</Typography>
                                 </Grid>
                                 <Grid item xs = {4}>
                                     <Typography className = {classes.Subheader}>Phone Number:</Typography>
-                                    <Typography className = {classes.normalText}>054-3329697</Typography>
+                                    <Typography className = {classes.normalText}>054-2514444</Typography>
                                 </Grid>
                             </Grid>
                            
