@@ -44,7 +44,7 @@ const Contact = (props) => {
         <Element name="Contact">
             <div style = {{position : 'relative'}}>
                 <div style = {{}}>
-                    <NavBar id = "navbar" labels = {['About' , 'Gallery' ,'Events', 'Contact']}></NavBar>
+                <NavBar labels = {['Home', 'About' , 'Gallery' ,'Events', 'Contact']}></NavBar>
                 </div>
                 <body className = 'bodyContact'>
                     <Grid container direction='row'>

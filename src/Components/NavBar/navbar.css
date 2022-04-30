@@ -1,4 +1,15 @@
+
 .noBackGround{
     background : none;
     color : blackl
+}
+
+
+.LogoMargin{
+    margin-left: 3.7em;
+    font-size: 36px;
+    font-family: Josefin Sans ,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
 }

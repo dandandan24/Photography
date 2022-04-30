@@ -11,7 +11,8 @@ import Reveal from 'react-reveal'
 const useStyles = makeStyles(theme => ({
    Header : {
        fontSize : 52,
-       fontWeight : 'bold',
+       fontFamily : 'Obliqua Sans',
+       fontWeight : 'normal',
        marginTop : '2em',
        fontVariant : 'h6',
        color : 'white'
@@ -19,6 +20,7 @@ const useStyles = makeStyles(theme => ({
    Subheader : {
        fontSize : 32,
        fontWeight : 'bold',
+       fontFamily : 'Roboto',
        marginTop : '1em', 
        fontVariant : 'h4',
        color : 'white'
@@ -27,6 +29,7 @@ const useStyles = makeStyles(theme => ({
         fontSize : 28,
         marginTop : '3em',
         fontVariant : 'h4',
+        fontFamily : 'Roboto',
         color : 'white',
         maxWidth : '17em'
    },
@@ -41,7 +44,7 @@ const About = () => {
         
         <div style = {{backgroundImage : `url(${Background})`,margin : '0px',minWidth : '100%' , minHeight : '100%', backgroundSize : 'cover' , backgroundPosition : 'center'}}>
           <Element name="About">
-            <NavBar labels = {['About' , 'Gallery' ,'Events', 'Contact']} clean = {true}></NavBar>
+            <NavBar labels = {['Home', 'About' , 'Gallery' ,'Events', 'Contact']} clean = {true}></NavBar>
             <div className = {classes.textBox}>
                 <Fade top distance = '130px' > <Typography className = {classes.Header}>Hi, i am Revital</Typography></Fade>
                 <Fade top distance = '75px'><Typography className = {classes.Subheader}>Event photographer</Typography></Fade>

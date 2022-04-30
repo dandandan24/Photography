@@ -10,6 +10,8 @@ import { white } from 'material-ui/styles/colors'
 import { connect , dispatch } from "react-redux"
 import Scroll from 'react-scroll'
 import disableScroll from 'disable-scroll'
+import './navbar.css'
+import {styled} from '@material-ui/styles'
 
 const useStyles = makeStyles(theme => ({
     cleanappBar : {
@@ -29,19 +31,18 @@ const useStyles = makeStyles(theme => ({
         backgroundColor : 'white',
         color : 'black'
     },
-    LogoMargin : {
-        marginLeft: '3.7em',
-        fontSize : 36,
-        fontFamily : 'Grey Qo',
-    },
+   
     tabContainer : {
-        marginLeft : 'auto'
+        marginLeft : 'auto',
+        
     },
+
     tab : {
         textTransform : 'none',
         fontSize : 18,
-        color : 'white',
-        
+        color : 'white', 
+        fontWeight : '300',
+       
     },
     blackTab : {
         textTransform : 'none',
@@ -49,12 +50,19 @@ const useStyles = makeStyles(theme => ({
         color : 'black',
         
     },
-    cleanWhiteappBar: {
+    WhiteAppBar: {
         position : 'fixed',
         zIndex : 10,
         boxShadow : 'none',
         background : 'none',
         color : 'white',
+    },
+    BlackAppBar: {
+        position : 'fixed',
+        zIndex : 10,
+        boxShadow : 'none',
+        background : 'none',
+        color : 'black',
     },
     toolbarMargin : {
         ...theme.mixins.toolbar
@@ -62,60 +70,99 @@ const useStyles = makeStyles(theme => ({
 
 }))
 
+const StyledTabs = styled((props) => (
+    <Tabs
+      {...props}
+      TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+    />
+  ))({
+    '& .MuiTabs-indicator': {
+      display: 'flex',
+      justifyContent: 'center',
+      backgroundColor: 'transparent',
+    },
+    '& .MuiTabs-indicatorSpan': {
+      maxWidth : 40,
+      width: '100%',
+      backgroundColor: '#F1BDAF',
+    },
+  });
+
 
 
 const NavBar = (props) => {
+    const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
+        ({ theme }) => ({
+          textTransform: 'none',
+          fontWeight: '300',
+          fontSize: theme.typography.pxToRem(17),
+          marginRight: theme.spacing(1),
+          color: props.tab !== 1 ? 'rgba(255, 255, 255, 0.7)' : '#000',
+          '&.Mui-selected': {
+            color: props.tab !== 1 ? '#fff' : '#000',
+          },
+        
+        }),
+      );
+    
     const classes = useStyles()
     const changeTab = (Tab) => {
         let scroller = Scroll.scroller
-        if(Tab === 'About'){
-            props.ChangeTab(0)
-            scroller.scrollTo('About' , {
+        if(Tab === 'Home'){
+            scroller.scrollTo('Home' , {
                 duration : Math.abs(props.tab)*700,
                 smooth : true
             })
-            
+            props.ChangeTab(0)
         }
-        if(Tab === 'Gallery'){
+        if(Tab === 'About'){
             props.ChangeTab(1)
-            scroller.scrollTo('Gallery' , {
+            scroller.scrollTo('About' , {
                 duration : Math.abs(1 - props.tab)*700,
                 smooth : true
             })
             
         }
-        if(Tab === 'Events'){
+        if(Tab === 'Gallery'){
             props.ChangeTab(2)
-            scroller.scrollTo('Events' , {
+            scroller.scrollTo('Gallery' , {
                 duration : Math.abs(2 - props.tab)*700,
+                smooth : true
+            })
+            
+        }
+        if(Tab === 'Events'){
+            props.ChangeTab(3)
+            scroller.scrollTo('Events' , {
+                duration : Math.abs(3 - props.tab)*700,
                 smooth : true
             })
         }
         if(Tab === 'Contact'){
             scroller.scrollTo('Contact' , {
-                duration : Math.abs(3 - props.tab)*700,
+                duration : Math.abs(4 - props.tab)*700,
                 smooth : true
             })
-            props.ChangeTab(3)
+            props.ChangeTab(4)
         }
+       
     }
 
     return(
         <>
-            <AppBar className = {props.tab === 0 ? classes.cleanappBar : props.tab === 1? classes.whitebackGround : props.tab === 2? classes.cleanWhiteappBar : classes.whitebackGround}>
+            <AppBar className = {props.tab !== 1 ? classes.WhiteAppBar : classes.BlackAppBar} /*{props.tab === 0 ? classes.cleanappBar : props.tab === 1 ? classes.cleanappBar : props.tab === 2? classes.whitebackGround : props.tab === 3? classes.cleanWhiteappBar : classes.whitebackGround}*/> 
                 <Toolbar>
-                   
-                    <Typography variant="h6" className = {classes.LogoMargin}>
-                        Revital
-                    </Typography>      
-                    <Tabs value = {props.tab} className = {classes.tabContainer}>
+                    <p className = 'LogoMargin'>
+                        Revital 
+                    </p>      
+                    <StyledTabs value = {props.tab} className = {classes.tabContainer}>
                         {props.labels.map( (label) => {
                             return(
-                                <Tab onClick = {()=> {changeTab(label)}} label = {label} className = {props.tab === 0 ? classes.tab : props.tab === 1 ? classes.blackTab : props.tab === 2 ? classes.tab : classes.blackTab}></Tab>
+                                <StyledTab onClick = {()=> {changeTab(label)}} label = {label} className = {props.tab === 0 ? classes.tab : props.tab === 1 ? classes.tab : props.tab === 2 ? classes.blackTab : props.tab === 3 ? classes.tab : classes.blackTab}></StyledTab>
                             )
                         })
                         }
-                    </Tabs>
+                    </StyledTabs>
                 </Toolbar>
             </AppBar>
             <div className = {classes.toolbarMargin}></div>

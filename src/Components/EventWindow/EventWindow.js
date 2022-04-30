@@ -8,6 +8,7 @@ import ToolBar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import Close from '@material-ui/icons/Close'
 import './EventWindow.css'
+import Check from '@material-ui/icons/Check'
 
 const EventWindow = (props) => {
 
@@ -16,10 +17,9 @@ const EventWindow = (props) => {
       });
 
     return(
-        // <div style = {{width : '100%' , height : }}></div>
         <Dialog fullScreen open = {props.open} onClose ={props.handleClose} TransitionComponent={Transition} style = {{overflow : 'visible'}}>
                 <div style = {{backgroundColor : '#FFF5EC', display : 'flex'}}>
-                    <img src = './Images/ChildHoodBlack.jpg' style = {{width : '33%'  , boxShadow  : '5px 0px 20px grey'}}></img>
+                    <img src = {props.source} style = {{width : '25%'  , boxShadow  : '5px 0px 20px grey'}}></img>
                     <IconButton
                         edge="start"
                         color="inherit"
@@ -29,8 +29,8 @@ const EventWindow = (props) => {
                         >
                         <Close />
                     </IconButton>      
-                    <div style = {{width : '67%' , direction : 'rtl' , background: 'linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1))'}}>
-                        <span style = {{alignSelf : 'top', fontSize : '60px' , marginRight : '35px', color : '#A36329'}}>ילדות</span>     
+                    <div style = {{width : '75%' , direction : 'rtl' , background: 'linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1))'}}>
+                        <span style = {{alignSelf : 'top', fontSize : '60px' , marginRight : '35px', color : '#A36329'}}>{props.title}</span>     
                         <div style = {{marginRight : '35px', height : '75%', marginTop : '3%'}}>
                             <table>
                                 <tr> 
@@ -52,6 +52,7 @@ const EventWindow = (props) => {
                                     <td></td>
                                     <td className='col price'>
                                         1100
+                                        
                                     </td>
                                     <td className='col price'>
                                         1500                                    
@@ -88,12 +89,26 @@ const EventWindow = (props) => {
                         </div>  
                         <div style = {{display : 'flex', flexDirection : 'row', color : '#A36329'}}>
                             <div style = {{display : 'flex', flexDirection : 'column',marginRight : '35px' ,width : '50%'}}>
-                                <span>מגוון רחב של אביזרים לצילום</span>
+                               <div style = {{display : 'flex' , alignItems : 'center'}}>
+                                <Check style = {{marginBottom : '5px'}}></Check>
+                               <span>מגוון רחב של אביזרים לצילום</span>
+                               </div>  
+                               <div style = {{display : 'flex' , alignItems : 'center'}}>
+                                <Check style = {{marginBottom : '5px'}}></Check>
                                 <span>העברת התמונות הערוכות עד 30 ימי עסקים</span>
+                               </div>    
+                               
                             </div>
                             <div style = {{display : 'flex',flexDirection : 'column',marginRight : '35px' ,width : '50%'}}>
+                                <div style = {{display : 'flex' , alignItems : 'center'}}>
+                                <Check style = {{marginBottom : '5px'}}></Check>
                                 <span>ליווי אישי לתכנון סטיילינג טרם הצילומים</span>
+                               </div>    
+                               <div style = {{display : 'flex' , alignItems : 'center'}}>
+                                <Check style = {{marginBottom : '5px'}}></Check>
                                 <span>תוספת אלבום מודפס ומעוצב - 550</span>
+                               </div>   
+                               
                             </div>
                         </div>                      
                     </div>

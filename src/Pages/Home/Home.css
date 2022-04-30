@@ -1,0 +1,73 @@
+
+
+.BackGroundImage {
+    background-image: url('../Home/HomeBackGround.jpg') ;
+    height: 100vh;
+    background-size : cover ;
+    background-position-y: 30%;
+    position: relative;
+  
+    /* animation: unblur 3s forwards, Minimze 1s 3s forwards;
+    filter: blur(10px); */
+}
+
+@keyframes unblur {
+    0% {filter: blur(10px);}
+    20% {filter: blur(11px);}
+    40% {filter: blur(8px);}
+    60% {filter: blur(12px);}
+    100% {filter: blur(0px);}
+  }
+
+@keyframes Minimize {
+    0% {background-position-x: 20%;}
+    100% {background-position-y: 0%;}
+}
+  
+@keyframes TextAppear {
+    0% {display: none;}
+    100% {display:relative;}
+    
+}
+  
+
+.textBox  {
+    margin-left : 10em;
+    margin-bottom : 7em;
+    height  : 100%;
+    color: black;
+    /* display: none; */
+    /* animation: TextAppear 1s 3s forwards */
+}
+
+.HeaderContainer{
+    display: flex;
+    gap: 0.5em
+}
+
+.Header {
+    margin-top: 4em;
+    font-size : 48px;
+    font-family : Quicksand;
+    font-weight : bold;
+    color : whitesmoke;
+    display: inline-block;
+}
+
+.HeaderSpecial {
+    margin-top: 4em;
+    font-size : 48px;
+    font-family : Quicksand;
+    font-weight : bold;
+    color : #F1BDAF;
+    display: inline-block;
+}
+
+.SubHeader {
+    font-size : 28px;
+    font-weight : normal;
+    font-family : Quicksand;
+    margin-top : 1em;
+    color : whitesmoke;
+    max-width : 17em;
+}

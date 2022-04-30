@@ -27,7 +27,7 @@ const Gallery = (props) => {
         <div id = 'Gallery' style = {{marginTop: '1.4em' , marginBottom : '1.0em'}}>
             <Grid container spacing = {1}>
                 <Grid item xs = {12}>           
-                    <NavBar id = "navbar" labels = {['About' , 'Gallery' ,'Events', 'Contact']}></NavBar>
+                <NavBar labels = {['Home', 'About' , 'Gallery' ,'Events', 'Contact']}></NavBar>
                 </Grid>
                 <Grid item xs = {8}>       
                     <ImageList  cols={4} rowHeight = {(window.innerHeight - 92)/3.036}>  

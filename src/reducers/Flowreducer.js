@@ -18,9 +18,9 @@ const Flowreducer = (state = initialState,  action) => {
                 openGallery : false
             }  
         case "handleOpen":
-            return {
+            return {   
                 ...initialState,
-                openGallery : true
+                openGallery : true   
             } 
         case "handleCloseEvent":
             return {
@@ -31,7 +31,9 @@ const Flowreducer = (state = initialState,  action) => {
         case "handleOpenEvent":
             return {
                 ...initialState,
-                openEvent : true
+                openEvent : true,
+                Source : action.Source,    
+                Title : action.Title           
             }  
     }
     return initialState     

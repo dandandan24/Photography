@@ -14,7 +14,7 @@ import EventWindow from '../../Components/EventWindow/EventWindow'
 
 const Events = (props) => {
     
-
+    
     const [leftRadioChecked , setleftRadioChecked] = useState(false)
     const [RightRadioChecked , setRightRadioChecked] = useState(false)
 
@@ -60,7 +60,7 @@ const Events = (props) => {
              
               
                     <div className = "slide first">
-                        <div className = 'img-container' onClick = {() => {props.handleOpen()}}>   
+                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/ChildHoodBlack.jpg' ,'ילדות' )}}>   
                             <img src = './Images/ChildHoodv.jpg'/> 
                             <div className = 'text-overlay'>
                                 <span>
@@ -68,7 +68,7 @@ const Events = (props) => {
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container'>
+                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/NewBornV.jpg' ,'תינוק חדש' )}}> 
                             <img src = './Images/NewBornV.jpg'/> 
                             <div className = 'text-overlay'>
                                 <span>
@@ -76,7 +76,7 @@ const Events = (props) => {
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container'>
+                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/CoupleV.jpg','זוגיות')}}>
                             <img src = './Images/CoupleV.jpg'/> 
                             <div className = 'text-overlay'>
                                 <span>
@@ -84,7 +84,7 @@ const Events = (props) => {
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container'>   
+                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/BatMitzvaV.jpg','בוק בת מצווה' )}}>   
                             <img src = './Images/BatMitzvaV.jpg'/> 
                             <div className = 'text-overlay'>
                                 <span>
@@ -95,7 +95,7 @@ const Events = (props) => {
                         </div>
 
                     <div className = "slide">
-                        <div className = 'img-container'>   
+                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/FigureV.jpg' ,'צילומי תדמית' )}}>   
                             <img src = './Images/FigureV.jpg'/> 
                             <div className = 'text-overlay'>
                                 <span>
@@ -103,7 +103,7 @@ const Events = (props) => {
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container'>
+                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/NewBornV.jpg','הריון' )}}>
                             <img src = './Images/NewBornV.jpg'/> 
                             <div className = 'text-overlay'>
                                 <span>
@@ -111,7 +111,7 @@ const Events = (props) => {
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container'>
+                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/FamilyV.jpg','משפחה' )}}>
                             <img src = './Images/FamilyV.jpg'/> 
                             <div className = 'text-overlay'>
                                 <span>
@@ -119,7 +119,7 @@ const Events = (props) => {
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container'>   
+                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/BatMitzvaV.jpg','תאריך חתונה' )}}>   
                             <img src = './Images/BatMitzvaV.jpg'/> 
                             <div className = 'text-overlay'>
                                 <span>
@@ -131,7 +131,7 @@ const Events = (props) => {
             </div>
 
                     {props.open?
-                <EventWindow>
+                <EventWindow source = {props.Source} title = {props.Title}>
                 </EventWindow>  
                 : <></>
         }
@@ -142,13 +142,15 @@ const Events = (props) => {
 const mapStateToProps = (state) => {
     return {
         open : state.flow.openEvent,
+        Source : state.flow.Source,
+        Title : state.flow.Title
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         handleClose : () => dispatch({type : 'handleCloseEvent'}),
-        handleOpen : () => dispatch({type : 'handleOpenEvent'}),
+        handleOpen : (newSource , newTitle) => dispatch({type : 'handleOpenEvent' , Source : newSource , Title : newTitle}),
     }
 }
 
