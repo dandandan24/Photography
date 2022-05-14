@@ -14,6 +14,7 @@ import Button from '@material-ui/core/Button'
 import CameraAlt from '@material-ui/icons/CameraAlt'
 import  Brush  from '@material-ui/icons/Brush'
 import  Palette  from '@material-ui/icons/Palette'
+import Skill from './Components/Skill/Skill'
 
 const useStyles = makeStyles(theme => ({
     HeaderContainer: {
@@ -83,6 +84,10 @@ const useStyles = makeStyles(theme => ({
    SkillsSubText:{
     fontSize: '16px',
     color:'grey',
+   },
+   SkillIcon : {
+       color: '#F1BDAF',
+       fontSize : '32px'
    }
 }))
 const AboutModern = () => {
@@ -100,56 +105,19 @@ const AboutModern = () => {
                     </div>
                     <Fade top distance = '75px'><Typography className = {classes.Subheader}>I've have been working as a proffessional photographer for 3 years, I am married to Ran and have two lovely kids - Yeal and Guy</Typography></Fade>
                     <Divider style = {{marginTop : '1.5em' , marginBottom : '1em' , width : '100%'}}></Divider>
-                    <Grid container style = {{marginTop : '2em'}}>
+                    <Grid container style = {{marginTop : '2em', marginLeft : "-1em"}}>
                         <Grid item xs = {4} >
-                            <Grid container>
-                                <Grid item xs = {12} className = {classes.Skills}>
-                                    <CameraAlt fontSize='large' htmlColor='#F1BDAF'></CameraAlt>
-                                </Grid>
-                                <Grid item xs = {12} className = {classes.SkillesHeader} >
-                                    <Fade bottom distance = '75px'>       
-                                        <Typography className = {classes.normalText}>Photography</Typography>
-                                    </Fade>
-                                </Grid>       
-                                <Grid item xs = {12} className = {classes.SkillesSubText} >
-                                    <Fade bottom distance = '75px'>       
-                                        <Typography className = {classes.SkillsSubText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit thouas</Typography>
-                                    </Fade>
-                                </Grid>              
-                            </Grid>
+                            <Skill Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit thouas"
+                                    Header = "Photography" Icon ={<CameraAlt className= {classes.SkillIcon}></CameraAlt>}></Skill>
+                        </Grid>
+                        <Grid item xs = {4}>
+                            <Skill Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit thouas"
+                                    Header = "Accessories" Icon ={<Palette className= {classes.SkillIcon}></Palette>}></Skill>
                         </Grid>
                         <Grid item xs = {4}>
                             <Grid container >
-                                <Grid item xs = {12} className = {classes.Skills}>
-                                    <Palette fontSize='large' htmlColor='#F1BDAF'></Palette>
-                                </Grid>
-                                <Grid item xs = {12} className = {classes.SkillesHeader}>
-                                    <Fade bottom distance = '75px'>       
-                                        <Typography className = {classes.normalText}>Accessories</Typography>
-                                    </Fade>
-                                </Grid>    
-                                <Grid item xs = {12} className = {classes.SkillesSubText} >
-                                    <Fade bottom distance = '75px'>       
-                                        <Typography className = {classes.SkillsSubText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit thouas</Typography>
-                                    </Fade>
-                                </Grid>             
-                            </Grid>
-                        </Grid>
-                        <Grid item xs = {4}>
-                            <Grid container >
-                                <Grid item xs = {12} className = {classes.Skills}>
-                                    <Brush fontSize='large' htmlColor='#F1BDAF'></Brush>
-                                </Grid>
-                                <Grid item xs = {12} className = {classes.SkillesHeader}>
-                                    <Fade bottom distance = '75px'>       
-                                        <Typography className = {classes.normalText}>Editing</Typography>
-                                    </Fade>
-                                </Grid>    
-                                <Grid item xs = {12} className = {classes.SkillesSubText} >
-                                    <Fade bottom distance = '75px'>       
-                                        <Typography className = {classes.SkillsSubText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit thouas</Typography>
-                                    </Fade>
-                                </Grid>             
+                            <Skill Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit thouas"
+                                    Header = "Editing" Icon ={<Brush className= {classes.SkillIcon}></Brush>}></Skill>        
                             </Grid>
                         </Grid>
                     </Grid>

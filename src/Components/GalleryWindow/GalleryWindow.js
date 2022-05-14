@@ -13,9 +13,13 @@ import Fade from 'react-reveal'
 import {styled} from '@material-ui/styles'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
-import Toolbar from '@material-ui/core/Toolbar'
+import ToolBar from '@material-ui/core/Toolbar'
+import {useState} from 'react'
 
 const useStyles = makeStyles(theme => ({
+
+    
+
     cleanappBar : {
       
         position : 'fixed',
@@ -35,30 +39,32 @@ const useStyles = makeStyles(theme => ({
 
 }))
 
-const GalleryWindow = (props) => {
-    const classes = useStyles()
-    const Transition = React.forwardRef(function Transition(props, ref) {
-        return <SlideUp direction="up" ref={ref} {...props} />;
-      });
+const StyledTabs = styled((props) => (
+    <Tabs
+      {...props}
+      TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+    />
+  ))({
+    '& .MuiTabs-indicator': {
+      display: 'flex',
+      justifyContent: 'center',
+      backgroundColor: 'transparent',
+    },
+    '& .MuiTabs-indicatorSpan': {
+      maxWidth : 40,
+      width: '100%',
+      backgroundColor: '#F1BDAF',
+      
+    },
+  });
 
-      const StyledTabs = styled((props) => (
-        <Tabs
-          {...props}
-          TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
-        />
-      ))({
-        '& .MuiTabs-indicator': {
-          display: 'flex',
-          justifyContent: 'center',
-          backgroundColor: 'transparent',
-        },
-        '& .MuiTabs-indicatorSpan': {
-          maxWidth : 40,
-          width: '100%',
-          backgroundColor: '#F1BDAF',
-          
-        },
-      });
+
+const GalleryWindow = (props) => {
+    const [GalleryTab, ChangeGalleryTab] = useState(0)
+    const GalleryTabs = {'Figure' : 0, 'New Born' : 1, 'Couples' : 2, 'Bat Mitzva': 3}
+    const classes = useStyles()
+
+
     
     const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
         ({ theme }) => ({
@@ -75,8 +81,8 @@ const GalleryWindow = (props) => {
       );
 
     return(
-        <Dialog fullScreen open = {props.open} onClose ={props.handleClose} TransitionComponent={Transition} style = {{  overflow : 'visible'}}>
-             {/* <AppBar sx={{ position: 'relative'}} style= {{background : 'none' , color : 'black' , boxShadow : 'none'}}>
+        <Dialog fullScreen open = {props.open} onClose ={props.handleClose}  style = {{  overflow : 'visible'}}>
+             <AppBar sx={{ position: 'relative'}} style= {{background : 'none' , color : 'black' , boxShadow : 'none'}}>
                 <ToolBar>
                     <IconButton
                     edge="start"
@@ -88,7 +94,7 @@ const GalleryWindow = (props) => {
                     <Close />
                     </IconButton>
                 </ToolBar>
-            </AppBar> */}
+            </AppBar>
           
             <div className = "gallery-container">
                 <div className = "heading">                 
@@ -97,17 +103,13 @@ const GalleryWindow = (props) => {
                     </div>
                 </div>
                 <div style = {{marginBottom : '7%'}}>
-                    <StyledTabs value = {props.tab} className = {classes.tabContainer}>
-                        {/* {props.labels.map( (label) => {
+                    <StyledTabs value = {GalleryTab}>
+                        {Object.keys(GalleryTabs).map((label) => {
                             return(
-                                <StyledTab onClick = {()=> {changeTab(label)}} label = {label} className = {props.tab === 0 ? classes.tab : props.tab === 1 ? classes.tab : props.tab === 2 ? classes.blackTab : props.tab === 3 ? classes.tab : classes.blackTab}></StyledTab>
+                                <StyledTab onClick = {()=> {ChangeGalleryTab(GalleryTabs[label])}} label = {label}></StyledTab>
                             )
                         })
-                        } */}                 
-                        <StyledTab label = 'Figure'></StyledTab>
-                        <StyledTab label = 'New Born'></StyledTab>
-                        <StyledTab label = 'Couples'></StyledTab>
-                        <StyledTab label = 'Bat Mitzva'></StyledTab>
+                        }                
                     </StyledTabs>
                 </div>
                 <div className = "box2">
@@ -311,12 +313,14 @@ const GalleryWindow = (props) => {
 const mapStateToProps = (state) => {
     return {
         open : state.flow.openGallery,
+
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         handleClose : () => dispatch({type : 'handleClose'}),
+        
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(GalleryWindow)

@@ -97,9 +97,9 @@ const NavBar = (props) => {
           fontWeight: '300',
           fontSize: theme.typography.pxToRem(17),
           marginRight: theme.spacing(1),
-          color: props.tab !== 1 ? 'rgba(255, 255, 255, 0.7)' : '#000',
+          color: props.tab !== 1 &&  props.tab !== 4 ? 'rgba(255, 255, 255, 0.7)' : '#000',
           '&.Mui-selected': {
-            color: props.tab !== 1 ? '#fff' : '#000',
+            color: props.tab !== 1 &&  props.tab !== 4  ? '#fff' : '#000',
           },
         
         }),
@@ -124,12 +124,7 @@ const NavBar = (props) => {
             
         }
         if(Tab === 'Gallery'){
-            props.ChangeTab(2)
-            scroller.scrollTo('Gallery' , {
-                duration : Math.abs(2 - props.tab)*700,
-                smooth : true
-            })
-            
+           props.handleOpen()
         }
         if(Tab === 'Events'){
             props.ChangeTab(3)
@@ -150,7 +145,7 @@ const NavBar = (props) => {
 
     return(
         <>
-            <AppBar className = {props.tab !== 1 ? classes.WhiteAppBar : classes.BlackAppBar} /*{props.tab === 0 ? classes.cleanappBar : props.tab === 1 ? classes.cleanappBar : props.tab === 2? classes.whitebackGround : props.tab === 3? classes.cleanWhiteappBar : classes.whitebackGround}*/> 
+            <AppBar className = {props.tab !== 1 &&  props.tab !== 4? classes.WhiteAppBar : classes.BlackAppBar} /*{props.tab === 0 ? classes.cleanappBar : props.tab === 1 ? classes.cleanappBar : props.tab === 2? classes.whitebackGround : props.tab === 3? classes.cleanWhiteappBar : classes.whitebackGround}*/> 
                 <Toolbar>
                     <p className = 'LogoMargin'>
                         Revital 
@@ -158,7 +153,11 @@ const NavBar = (props) => {
                     <StyledTabs value = {props.tab} className = {classes.tabContainer}>
                         {props.labels.map( (label) => {
                             return(
-                                <StyledTab onClick = {()=> {changeTab(label)}} label = {label} className = {props.tab === 0 ? classes.tab : props.tab === 1 ? classes.tab : props.tab === 2 ? classes.blackTab : props.tab === 3 ? classes.tab : classes.blackTab}></StyledTab>
+                                label === 'Gallery' ? 
+                                <StyledTab onClick = {()=> {changeTab(label)}} label = {label} style = {{color : '#F1BDAF'}}></StyledTab>
+                                :
+                                <StyledTab onClick = {()=> {changeTab(label)}} label = {label} className = {classes.blackTab}></StyledTab>
+                            
                             )
                         })
                         }
@@ -173,13 +172,17 @@ const NavBar = (props) => {
 const mapStateToProps = (state) => {
     return {
         tab : state.flow.tab,
+        open : state.flow.openGallery,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         ChangeTab: (newTab) => dispatch({type : 'ChangeTab' , newTab : newTab}),
+        handleClose : () => dispatch({type : 'handleClose'}),
+        handleOpen : () => dispatch({type : 'handleOpen'}),
     }
 }
+ 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
 

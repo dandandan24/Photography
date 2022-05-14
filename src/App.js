@@ -15,8 +15,8 @@ import GalleryWindow from './Components/GalleryWindow/GalleryWindow'
 import disableScroll from 'disable-scroll';
 import { useEffect } from 'react';
 import AboutModern from './Pages/AboutModern/AboutModern'
-
-
+import AboutModernSkills from './Pages/AboutModernV2/AboutModernSkills'
+import ContactModern from './Pages/ContactModern/ContactModern'
 
 const App = (props) => {
 
@@ -28,9 +28,9 @@ const App = (props) => {
             <div style = {{display : 'flex' , flexDirection : 'column' }}>
               <Home></Home>
               <AboutModern></AboutModern>
-              <Gallery></Gallery>
+              {props.open ? <GalleryWindow></GalleryWindow> : <></>}
               <Events></Events>
-              <Contact></Contact>
+              <ContactModern></ContactModern>
             </div>       
       </ThemeProvider>   
   );
@@ -39,6 +39,7 @@ const App = (props) => {
 
 const mapStateToProps = (state) => {
   return {
+    open : state.flow.openGallery,
       tab : state.flow.tab,
   }
 }
