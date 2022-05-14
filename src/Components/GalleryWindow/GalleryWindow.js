@@ -15,11 +15,9 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import ToolBar from '@material-ui/core/Toolbar'
 import {useState} from 'react'
+import batm from '../../images2/971A4711.jpg'
 
 const useStyles = makeStyles(theme => ({
-
-    
-
     cleanappBar : {
       
         position : 'fixed',
@@ -57,14 +55,19 @@ const StyledTabs = styled((props) => (
       
     },
   });
-
+  
+  const importAll = (r) => {
+    return r.keys().map(r);
+    }
 
 const GalleryWindow = (props) => {
-    const [GalleryTab, ChangeGalleryTab] = useState(0)
-    const GalleryTabs = {'Figure' : 0, 'New Born' : 1, 'Couples' : 2, 'Bat Mitzva': 3}
+    const [GalleryTab, ChangeGalleryTab] = useState(4)
+    const GalleryTabs = {'Figure' : 0, 'New Born' : 1, 'Couples' : 2, 'Bat Mitzva': 3, 'General' : 4, 'Family' : 5, 'Pregnancy' : 6, 'ChildHood' : 7}
     const classes = useStyles()
-
-
+    var ImageCounter = 0
+    var images = importAll(require.context('../../images2/SortedImages/BatMitzva', false, /\.(png|jpe?g|svg)$/));
+    console.log(images)
+    
     
     const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
         ({ theme }) => ({
@@ -114,51 +117,10 @@ const GalleryWindow = (props) => {
                 </div>
                 <div className = "box2">
                     <div className =  "dream">
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/1.jpg"></img>
-                        </Fade>                                                                                
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/2.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/3.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/4.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/5.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/1.jpg"></img>
-                        </Fade>                                                                                
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/2.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/3.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/4.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/5.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/1.jpg"></img>
-                        </Fade>                                                                                
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/2.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/3.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/4.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/5.jpg"></img>
-                        </Fade> 
+                        
+                        <Fade bottom distance = '85px'>                
+                            <img src = {images[0]}></img>
+                        </Fade>
                     </div>
                     <div className =  "dream">                            
                         <Fade bottom distance = '85px'>
