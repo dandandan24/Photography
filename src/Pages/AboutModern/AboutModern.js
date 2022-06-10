@@ -9,7 +9,7 @@ import Fade from 'react-reveal'
 import Reveal from 'react-reveal'
 import Grid from '@material-ui/core/Grid'
 import Divider from '@material-ui/core/Divider'
-import Image from '../AboutModern/Family.jpg'
+import Image from '../AboutModern/RevitalFamlilyWithEdges.jpg'
 import Button from '@material-ui/core/Button'
 import CameraAlt from '@material-ui/icons/CameraAlt'
 import  Brush  from '@material-ui/icons/Brush'
@@ -123,12 +123,12 @@ const AboutModern = () => {
                     </Grid>
                 
                     <Fade bottom distance = '130px'>
-                        <Button variant='outlined' style = {{color : '#F1BDAF', borderColor : '#F1BDAF',borderWidth : '3px',marginTop : '3em', textTransform : 'none', fontSize : '18px', fontWeight : 'bold'}}>Book A Shooting</Button>
+                        <Button variant='outlined' style = {{color : '#F1BDAF', borderColor : '#F1BDAF',borderWidth : '3px',marginTop : '3.5em', textTransform : 'none', fontSize : '18px', fontWeight : 'bold'}}>Book A Shooting</Button>
                     </Fade>
                 </Grid>
                
                 <Grid item xs = {7}>
-                    <div style = {{marginLeft : '4.5em',height: '70vh', width: '90%', marginTop: '5em'}}>
+                    <div style = {{marginLeft : '4.5em',height: '69vh', width: '90%', marginTop: '7em'}}>
                         <img src = {Image} alt="" style = {{height: '100%', width:'100%'}} ></img>
                     </div>        
                 </Grid>
