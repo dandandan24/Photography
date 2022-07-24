@@ -11,7 +11,14 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import {connect , dispatch} from 'react-redux'
 import EventWindow from '../../Components/EventWindow/EventWindow'
-import imagee from './Images/ChildHoodv.jpg'
+import ChildHood from './Images/ChildHoodV.jpg'
+import ChildHoodBlack from './Images/ChildHoodBlack.jpg'
+import NewBorn from './Images/NewBornV.jpg'
+import Couple from './Images/CoupleV.jpg'
+import BatMitzva from './Images/BatMitzvaV.jpg'
+import Figure from './Images/FigureV.jpg'
+import Family from './Images/FamilyV.jpg'
+
 
 const Events = (props) => {
     
@@ -61,32 +68,32 @@ const Events = (props) => {
              
               
                     <div className = "slide first">
-                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/ChildHoodBlack.jpg' ,'ילדות' )}}>   
-                            <img src = './Images/ChildHoodv.jpg'/> 
+                        <div className = 'img-container' onClick = {() => {props.handleOpen(ChildHoodBlack ,'ילדות' )}}>   
+                            <img src = {ChildHood}/> 
                             <div className = 'text-overlay'>
                                 <span>
                                     ChildHood
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/NewBornV.jpg' ,'תינוק חדש' )}}> 
-                            <img src = './Images/NewBornV.jpg'/> 
+                        <div className = 'img-container' onClick = {() => {props.handleOpen(NewBorn ,'תינוק חדש' )}}> 
+                            <img src = {NewBorn}/> 
                             <div className = 'text-overlay'>
                                 <span>
                                     New Born
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/CoupleV.jpg','זוגיות')}}>
-                            <img src = './Images/CoupleV.jpg'/> 
+                        <div className = 'img-container' onClick = {() => {props.handleOpen(Couple,'זוגיות')}}>
+                            <img src = {Couple}/> 
                             <div className = 'text-overlay'>
                                 <span>
                                     Couples
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/BatMitzvaV.jpg','בוק בת מצווה' )}}>   
-                            <img src = './Images/BatMitzvaV.jpg'/> 
+                        <div className = 'img-container' onClick = {() => {props.handleOpen(BatMitzva,'בוק בת מצווה' )}}>   
+                            <img src = {BatMitzva}/> 
                             <div className = 'text-overlay'>
                                 <span>
                                     Bat Mitzva
@@ -96,32 +103,32 @@ const Events = (props) => {
                         </div>
 
                     <div className = "slide">
-                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/FigureV.jpg' ,'צילומי תדמית' )}}>   
-                            <img src = './Images/FigureV.jpg'/> 
+                        <div className = 'img-container' onClick = {() => {props.handleOpen(Figure ,'צילומי תדמית' )}}>   
+                            <img src = {Figure}/> 
                             <div className = 'text-overlay'>
                                 <span>
                                     Figure
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/NewBornV.jpg','הריון' )}}>
-                            <img src = './Images/NewBornV.jpg'/> 
+                        <div className = 'img-container' onClick = {() => {props.handleOpen(NewBorn,'הריון' )}}>
+                            <img src = {NewBorn}/> 
                             <div className = 'text-overlay'>
                                 <span>
                                     Pregnancy
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/FamilyV.jpg','משפחה' )}}>
-                            <img src = './Images/FamilyV.jpg'/> 
+                        <div className = 'img-container' onClick = {() => {props.handleOpen(Family,'משפחה' )}}>
+                            <img src = {Family}/> 
                             <div className = 'text-overlay'>
                                 <span>
                                     Family
                                 </span>
                             </div>
                         </div>
-                        <div className = 'img-container' onClick = {() => {props.handleOpen('./Images/BatMitzvaV.jpg','תאריך חתונה' )}}>   
-                            <img src = './Images/BatMitzvaV.jpg'/> 
+                        <div className = 'img-container' onClick = {() => {props.handleOpen(Couple,'תאריך חתונה' )}}>   
+                            <img src = {Couple}/> 
                             <div className = 'text-overlay'>
                                 <span>
                                     Save the Date
