@@ -18,6 +18,9 @@ import AboutModern from './Pages/AboutModern/AboutModern'
 import AboutModernSkills from './Pages/AboutModernV2/AboutModernSkills'
 import ContactModern from './Pages/ContactModern/ContactModern'
 
+
+
+
 const App = (props) => {
 
 
@@ -28,7 +31,7 @@ const App = (props) => {
             <div style = {{display : 'flex' , flexDirection : 'column' }}>
               <Home></Home>
               <AboutModern></AboutModern>
-              {props.open ? <GalleryWindow></GalleryWindow> : <></>}
+              {props.open ? <GalleryWindow ></GalleryWindow> : <></>}
               <Events></Events>
               <ContactModern></ContactModern>
             </div>       

@@ -11,6 +11,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import {connect , dispatch} from 'react-redux'
 import EventWindow from '../../Components/EventWindow/EventWindow'
+import imagee from './Images/ChildHoodv.jpg'
 
 const Events = (props) => {
     

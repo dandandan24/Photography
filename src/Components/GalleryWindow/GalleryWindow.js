@@ -15,27 +15,7 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import ToolBar from '@material-ui/core/Toolbar'
 import {useState} from 'react'
-import batm from '../../images2/971A4711.jpg'
-
-const useStyles = makeStyles(theme => ({
-    cleanappBar : {
-      
-        position : 'fixed',
-        zIndex : 10,
-        boxShadow : 'none',
-        background : 'none',
-        color : 'white',
-      
-    },
-    tabContainer : {
-        marginLeft : 'auto',
-
-    },
-    toolbarMargin : {
-        ...theme.mixins.toolbar
-    }
-
-}))
+import ImageContainer from './ImageContainer'
 
 const StyledTabs = styled((props) => (
     <Tabs
@@ -56,22 +36,27 @@ const StyledTabs = styled((props) => (
     },
   });
   
-  const importAll = (r) => {
-    return r.keys().map(r);
-    }
+const importAll = (r) => {
+return r.keys().map(r);
+}
+
+
+const FigureImages = importAll(require.context( '../../images2/SortedImages/FigureComp' , false, /\.(png|jpe?g|svg)$/))
+const NewBornImages = importAll(require.context( '../../images2/SortedImages/NewBornComp' , false, /\.(png|jpe?g|svg)$/))
+const CoupleImages = importAll(require.context( '../../images2/SortedImages/CoupleComp' , false, /\.(png|jpe?g|svg)$/))
+const BatMitzvaImages = importAll(require.context( '../../images2/SortedImages/BatMitzvaComp' , false, /\.(png|jpe?g|svg)$/))
+const GeneralImages = importAll(require.context( '../../images2/SortedImages/GeneralComp' , false, /\.(png|jpe?g|svg)$/))
+const FamilyImages = importAll(require.context( '../../images2/SortedImages/FamilyComp' , false, /\.(png|jpe?g|svg)$/))
+const PregnancyImages = importAll(require.context( '../../images2/SortedImages/PregnancyComp' , false, /\.(png|jpe?g|svg)$/))
+const ChildHoodImages = importAll(require.context( '../../images2/SortedImages/ChildHoodComp' , false, /\.(png|jpe?g|svg)$/))
+const AllImages = [FigureImages, NewBornImages , CoupleImages, BatMitzvaImages , GeneralImages , FamilyImages, PregnancyImages, ChildHoodImages]
+console.log('wopw')
 
 const GalleryWindow = (props) => {
-    const [GalleryTab, ChangeGalleryTab] = useState(4)
-    const [images, Changeimages] = useState(importAll(require.context('../../images2/SortedImages/BatMitzva', false, /\.(png|jpe?g|svg)$/)))
+    const [GalleryTab, ChangeGalleryTab] = useState(2)
     const GalleryTabs = {'Figure' : 0, 'New Born' : 1, 'Couples' : 2, 'Bat Mitzva': 3, 'General' : 4, 'Family' : 5, 'Pregnancy' : 6, 'ChildHood' : 7}
-    const classes = useStyles()
-    var ImageCounter = 0 
 
-    useEffect(() => {
-        Changeimages(importAll(require.context('../../images2/SortedImages/BatMitzva', false, /\.(png|jpe?g|svg)$/)))
-    },[GalleryTab]);
-    
-   
+
     const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
         ({ theme }) => ({
           textTransform: 'none',
@@ -112,160 +97,57 @@ const GalleryWindow = (props) => {
                     <StyledTabs value = {GalleryTab}>
                         {Object.keys(GalleryTabs).map((label) => {
                             return(
-                                <StyledTab onClick = {()=> {ChangeGalleryTab(GalleryTabs[label])}} label = {label}></StyledTab>
+                                <StyledTab onClick = {()=> {
+                                    ChangeGalleryTab(GalleryTabs[label]);                              
+                                }} label = {label}></StyledTab>
                             )
                         })
                         }                
                     </StyledTabs>
                 </div>
-                <div className = "box2">
-                    <div className =  "dream">                      
-                        <Fade bottom distance = '85px'>                
-                            <img src = {images[0]['default']}></img>
-                        </Fade>
-                    </div>
-                    <div className =  "dream">                            
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/6.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/7.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/8.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/9.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/10.jpg"></img>
-                        </Fade>     
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/6.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/7.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/8.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/9.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/10.jpg"></img>
-                        </Fade>                          
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/6.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/7.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/8.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/9.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/10.jpg"></img>
-                        </Fade>    
-                    </div>    
-                    <div  className =  "dream">
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/11.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/12.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/13.jpg"></img>
-                        </Fade>
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/14.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/15.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/11.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/12.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/13.jpg"></img>
-                        </Fade>
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/14.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/15.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/11.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/12.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/13.jpg"></img>
-                        </Fade>
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/14.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/15.jpg"></img>
-                        </Fade> 
-                    </div>          
-                    <div  className =  "dream">
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/11.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/12.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/13.jpg"></img>
-                        </Fade>
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/14.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/15.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/11.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/12.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/13.jpg"></img>
-                        </Fade>
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/14.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/15.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/11.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/12.jpg"></img>
-                        </Fade> 
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/13.jpg"></img>
-                        </Fade>
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/14.jpg"></img>
-                        </Fade>                      
-                        <Fade bottom distance = '85px'>
-                            <img src = "./images2/15.jpg"></img>
-                        </Fade> 
-                    </div>
+                <div>
+               
+                    <div className = "box2">
+                        <div className =  "dream">                            
+                        {                       
+                                AllImages[GalleryTab].slice(0,AllImages[GalleryTab].length / 3).map((image , index) => {                           
+                                    return(
+                                        <Fade>
+                                             <img src = {image['default']}></img>    
+                                        </Fade>                     
+                                    )
+                                
+                            })
+                        }
+                        </div>    
+                        <div className =  "dream">                            
+                        {
+                             AllImages[GalleryTab].slice(AllImages[GalleryTab].length / 3,AllImages[GalleryTab].length / 3 * 2).map((image , index) => {
+                               
+                                    return(
+                                        <Fade>
+                                        <img src = {image['default']}></img>    
+                                        </Fade>    
+                                    )
+                                
+                            })
+                        }
+                        </div>           
+                        <div className =  "dream">                            
+                        {
+                                AllImages[GalleryTab].slice(AllImages[GalleryTab].length / 3 * 2,AllImages[GalleryTab].length).map((image , index) => {           
+                                        return(
+                                            <Fade>
+                                            <img src = {image['default']}></img>    
+                                       </Fade>    
+                                        )                     
+                                })
+                        }
+                        </div>  
+                    </div> 
+                    
                 </div>
+              
             </div>
            
         </Dialog>
